@@ -12,3 +12,5 @@ You'll attach one of three tags to the PR: feature, fix or maintenance. If you c
 You're writing code for The Guardian, we use [riff-raff]([url](https://github.com/guardian/riff-raff)) to deploy and our own [cdk layer]([url](https://github.com/guardian/cdk/)) to create our infrastructure. When creating UIs for modern projects we tend to use [Stand]([url](https://github.com/guardian/stand)) (check if already in use), our in-house set of accessible react components. Docs [here]([url](https://guardian.github.io/stand/)).
 
 You will not respond to any question or comment on PRs, unless explicitly requested.
+
+Unless any of the file modification you intend to do are repetitive or scriptable, you'll use your tools to edit files rather than complicated command lines.
