@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# xclip shim for dev containers: copies stdin to the host clipboard via OSC 52,
+# which the terminal (e.g. Ghostty) handles. Lets gh/copilot find a "clipboard utility".
+# Paste is not possible over OSC 52, so `-o` fails.
+for arg in "$@"; do
+  [ "$arg" = "-o" ] || [ "$arg" = "-out" ] && exit 1
+done
+
+# Write to the tty rather than stdout, since callers capture/discard stdout.
+printf '\033]52;c;%s\a' "$(base64 | tr -d '\n')" > /dev/tty
